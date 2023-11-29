@@ -1,0 +1,707 @@
+$color-main: #667753;
+$color-text: #fbf8e6;
+$color-accent: #5d3030;
+$color-category: #c7c58d;
+
+@mixin inner($w: 90%, $mw: 1287px) {
+  width: $w;
+  max-width: $mw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin flex($a: center, $j: space-between) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $j;
+  align-items: $a;
+}
+
+body {
+  font-size: 16px;
+  color: $color-text;
+}
+
+/*header
+---------------------------------------------*/
+
+.header {
+  height: 100vh;
+  background-color: $color-main;
+  padding-top: 40px;
+  padding-bottom: 1500px;
+
+  &__inner {
+    width: 97%;
+    max-width: 3000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__photo {
+    position: relative;
+  }
+
+  &__logo {
+    position: absolute;
+    top: 20px;
+    left: 10px;
+    width: 100px;
+    background: url(../images/photo1.png) center center cover;
+  }
+
+  &__photo2 {
+    position: absolute;
+    top: 900px;
+    right: 10px;
+    width: 80%;
+    height: 60%;
+    margin: 0;
+    background: url(../images/photo2.png) no-repeat center center;
+    background-size: cover;
+    background-color: $color-main;
+  }
+
+  // &__hamburger-flex {
+  //   display: flex;
+  //   justify-content: space-between;
+  // }
+
+  &__right {
+    display: none;
+  }
+
+  &__back {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80%;
+    height: 60%;
+    margin: 0;
+    background: url(../images/photo1.png) no-repeat center center;
+    background-size: cover;
+    transition: all 1s;
+  }
+
+  &__text {
+    margin-top: 689px;
+    border: 0;
+    outline: 0;
+    font-weight: normal;
+  }
+
+  &__text p:nth-child(1) {
+    font-size: 30px;
+  }
+
+  &__text p:nth-child(2) {
+    font-size: 20px;
+  }
+}
+
+.hamburger {
+  display: block;
+  width: 40px;
+  height: 50px;
+  position: fixed;
+  top: 40px;
+  right: 20px;
+
+  & span {
+    display: block;
+    background-color: #fff;
+    height: 1px;
+    width: 50px;
+  }
+
+  & span:nth-child(2) {
+    margin-top: 10px;
+  }
+}
+
+/*btn
+------------------------*/
+
+.btn {
+  &--contact {
+    margin: 0 auto;
+    display: block;
+    width: 260px;
+    color: $color-main;
+    background-color: $color-text;
+    text-decoration: none;
+    padding: 25px 65px;
+    border-radius: 50px;
+    transition: 0.5s;
+    text-align: center;
+
+    &:hover {
+      background-color: $color-accent;
+      color: $color-text;
+      transition: 0.5s;
+    }
+  }
+}
+
+/*スクロールバー*/
+
+.scrolldown1 {
+  /*描画位置※位置は適宜調整してください*/
+  position: absolute;
+  right: 40px;
+  bottom: 430px;
+  /*全体の高さ*/
+  height: 100px;
+
+  & span {
+    /*描画位置*/
+    position: absolute;
+    left: -21px;
+    top: -20px;
+    /*テキストの形状*/
+    color: $color-accent;
+    transform: rotate(90deg);
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+  }
+
+  &::after {
+    content: '';
+    /*描画位置*/
+    position: absolute;
+    top: 0;
+    /*線の形状*/
+    width: 1px;
+    height: 50px;
+    background: $color-accent;
+    /*線の動き1.4秒かけて動く。永遠にループ*/
+    animation: pathmove 1.4s ease-in-out infinite;
+    opacity: 0;
+    margin-top: 20px;
+  }
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
+  }
+  30% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
+}
+
+/*main
+----------------------------------------------*/
+
+.main {
+  background-color: $color-main;
+
+  // &__inner {
+  //   width: 90%;
+  //   max-width: 835px;
+  //   margin-left: auto;
+  //   margin-right: auto;
+  // }
+  &__inner {
+    width: 91.8%;
+    max-width: 1287px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.unit {
+  &__category {
+    font-size: 12px;
+    color: $color-category;
+  }
+
+  &__title {
+    font-size: 32px;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  &__title:before {
+    z-index: 999;
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: -400px;
+    background-color: $color-text;
+    width: 350px;
+    height: 1px;
+  }
+
+  &__text {
+    line-height: (30/16);
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+}
+
+.card {
+  position: relative;
+  border-bottom: 1px solid $color-text;
+
+  &__imp {
+    position: relative;
+  }
+
+  &__content {
+    padding: 20px;
+  }
+
+  &__photo {
+    padding: 20px;
+    width: auto;
+    height: 100%;
+  }
+
+  &__number {
+    font-size: 90px;
+  }
+
+  &__title {
+    position: absolute;
+    top: 56px;
+    left: 60px;
+    color: $color-category;
+  }
+
+  &__content-title {
+    font-size: 28px;
+  }
+}
+
+/*about
+---------------------------------*/
+
+.about {
+  padding: 100px 0;
+
+  &__content {
+    margin-bottom: 100px;
+  }
+
+  &__text p:nth-child(1) {
+    font-size: 32px;
+    font-weight: bold;
+  }
+
+  &__text p:nth-child(2) {
+    font-size: 20px;
+    margin-left: 50px;
+  }
+
+  &__link {
+    color: $color-accent;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    font-weight: bold;
+  }
+
+  &__link::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 7px;
+    top: 5px;
+    left: 140px;
+    border-right: 2px solid $color-accent;
+    border-bottom: 1px solid $color-accent;
+    transform: skewX(50deg);
+    transition: 1s;
+  }
+
+  &__link:hover::before {
+    left: 170px;
+    transition: 0.5s;
+  }
+
+  &__link:after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 1px solid $color-accent;
+    top: -15px;
+    left: 195px;
+  }
+
+  &__photo {
+    position: relative;
+  }
+
+  &__photo1 {
+    max-width: 500px;
+    position: relative;
+    border: 1px solid $color-category;
+  }
+
+  &__photo2 {
+    position: absolute;
+    top: 200px;
+    right: -100px;
+    width: 300px;
+    border: 1px solid $color-category;
+  }
+
+  &__photo3 {
+    position: absolute;
+    top: 450px;
+    right: 60px;
+    width: 250px;
+    border: 1px solid $color-category;
+  }
+}
+
+// 文字のループ
+
+.loop {
+  display: flex;
+  overflow: hidden;
+  margin-top: 250px;
+
+  & p {
+    padding-right: 0.5em;
+    font-size: 15vw;
+    white-space: nowrap;
+    color: rgba(199, 197, 141, 0.5);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+      'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+}
+
+.text03 {
+  animation: loop 50s -25s linear infinite;
+}
+
+.text04 {
+  animation: loop2 50s linear infinite;
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes loop2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+/*service
+-----------------------------------------------*/
+
+.service {
+  &__content {
+    text-align: center;
+    border-top: 1px solid $color-text;
+    border-bottom: 1px solid $color-text;
+    padding: 50px 0 20px;
+  }
+
+  &__inner {
+    width: 91.8%;
+    max-width: 1287px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__item {
+    padding: 50px 0;
+  }
+}
+
+/*contact
+--------------------------------------------------*/
+.contact {
+  padding: 10px;
+
+  &__contents {
+    background-image: url(../images/photo2.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    text-align: center;
+    padding: 30px 0;
+  }
+}
+
+/*デスクトップ
+-------------------------------------------------*/
+
+@media (min-width: 970px) {
+  .header {
+    &__back {
+      width: 60%;
+    }
+
+    &__flex {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__left {
+      display: grid;
+      // grid-template-columns: 30% 30% 30%;
+      // grid-template-rows: 33vh 33vh 33vh;
+    }
+
+    &__right {
+      display: block;
+      margin-left: 100px;
+    }
+
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    &__photo2 img {
+      display: inline;
+    }
+
+    &__text {
+      margin-top: 500px;
+    }
+
+    &__logo {
+      width: 150px;
+      top: 30px;
+      left: 40px;
+    }
+  }
+
+  .btn {
+    display: block;
+    width: 260px;
+    margin-left: auto;
+    color: $color-main;
+    background-color: $color-text;
+    text-decoration: none;
+    padding: 25px 65px;
+    border-radius: 50px;
+    transition: 0.5s;
+    text-align: center;
+
+    &:hover {
+      background-color: $color-accent;
+      color: $color-text;
+      transition: 0.5s;
+    }
+  }
+
+  .card {
+    &__content {
+      width: 50%;
+      padding: 20px;
+      // border-right: 1px solid $color-text;
+    }
+
+    &__photo {
+      width: 50%;
+      padding: 20px;
+      width: auto;
+      height: 100%;
+    }
+
+    &__content-title {
+      margin-top: 500px;
+    }
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 50px;
+    margin-left: auto;
+
+    &__list {
+      list-style: none;
+      margin-bottom: 20px;
+      font-weight: bold;
+      font-size: 16px;
+
+      a {
+        position: relative;
+        text-decoration: none;
+        color: $color-text;
+        overflow: hidden;
+        padding: 10px 60px;
+      }
+
+      span {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        /*アニメーションの指定*/
+        transition: all 0.5s;
+        transform: translate(-50%, 0); /*X方向に-50% ※中央寄せにするため*/
+        /*ブロック要素にして透過なし、テキスト折り返しなし*/
+        display: block;
+        opacity: 1;
+        white-space: nowrap;
+      }
+
+      span:nth-child(2) {
+        opacity: 0; /*透過0に*/
+        transform: translate(-50%, 100%);
+      }
+
+      :hover span:nth-child(1) {
+        opacity: 0; /*透過0に*/
+        transform: translate(-50%, -100%);
+      }
+
+      :hover span:nth-child(2) {
+        opacity: 1; /*不透明に*/
+        transform: translate(-50%, 0);
+        font-weight: lighter;
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .about {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    &__content {
+      width: 31.8%;
+    }
+
+    &__photo {
+      width: 41.2%;
+    }
+
+    &__content {
+      margin-top: 100px;
+    }
+  }
+
+  .loop {
+    margin: 0;
+  }
+
+  .service {
+    &__item {
+      @include flex();
+    }
+
+    &__item:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 1px;
+      height: 100%;
+      background-color: $color-text;
+      transition: height 1s;
+    }
+
+    &__item:nth-child(even) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+@media (min-width: 835px) {
+  .header {
+    padding-bottom: 500px;
+    &__photo2 {
+      position: absolute;
+      top: 300px;
+      left: 69%;
+      width: 30%;
+      height: 60%;
+      margin: 0;
+      background: url(../images/photo2.png) no-repeat center center;
+      background-size: cover;
+    }
+  }
+
+  .scrolldown1 {
+    /*描画位置※位置は適宜調整してください*/
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    /*全体の高さ*/
+    height: 100px;
+
+    & span {
+      /*描画位置*/
+      position: absolute;
+      left: -20px;
+      top: -20px;
+      /*テキストの形状*/
+      color: $color-accent;
+      transform: rotate(90deg);
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+    }
+
+    &::after {
+      content: '';
+      /*描画位置*/
+      position: absolute;
+      top: 0;
+      /*線の形状*/
+      width: 1px;
+      height: 50px;
+      background: $color-accent;
+      /*線の動き1.4秒かけて動く。永遠にループ*/
+      animation: pathmove 1.4s ease-in-out infinite;
+      opacity: 0;
+      margin-top: 20px;
+    }
+  }
+
+  /*高さ・位置・透過が変化して線が上から下に動く*/
+  @keyframes pathmove {
+    0% {
+      height: 0;
+      top: 0;
+      opacity: 0;
+    }
+    30% {
+      height: 30px;
+      opacity: 1;
+    }
+    100% {
+      height: 0;
+      top: 50px;
+      opacity: 0;
+    }
+  }
+}
