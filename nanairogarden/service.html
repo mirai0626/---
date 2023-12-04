@@ -8,10 +8,10 @@
       href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>ナナイロGarden</title>
+    <title>ナナイロGarden-Service-</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header header__page">
       <div class="header__inner">
         <div class="header__hamburger-flex">
           <div class="header__flex">
@@ -27,34 +27,163 @@
             <div class="header__right">
               <ul class="menu">
                 <li class="menu__list">
-                  <a href="#"><span>Top</span><span>トップ</span></a>
+                  <a href="index.html"><span>Top</span><span>トップ</span></a>
                 </li>
                 <li class="menu__list">
-                  <a href="#"><span>About</span><span>会社について</span></a>
+                  <a href="about.html"
+                    ><span>About</span><span>会社について</span></a
+                  >
                 </li>
                 <li class="menu__list">
-                  <a href="#"><span>Service</span><span>サービス</span></a>
+                  <a href="service.html"
+                    ><span>Service</span><span>サービス</span></a
+                  >
                 </li>
                 <li class="menu__list">
-                  <a href="#"><span>Design</span><span>デザイン</span></a>
+                  <a href="design.html"
+                    ><span>Design</span><span>デザイン</span></a
+                  >
                 </li>
                 <li class="menu__list">
-                  <a href="#"><span>Contact</span><span>お問い合わせ</span></a>
+                  <a href="contact.html"
+                    ><span>Contact</span><span>お問い合わせ</span></a
+                  >
                 </li>
                 <li class="menu__list">
-                  <a href="#"><span>Order</span><span>ご注文</span></a>
+                  <a href="orderform.html"
+                    ><span>Order</span><span>ご注文</span></a
+                  >
                 </li>
               </ul>
               <a class="btn" href="#">Contact Form</a>
             </div>
           </div>
-          <div class="hamburger">
-            <span></span>
-            <!-- <span>menu</span> -->
-            <span></span>
+          <div class="hamburger__top">
+            <div class="hamburger">
+              <span></span>
+              <!-- <span>menu</span> -->
+              <span></span>
+            </div>
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="index.html">Top</a>
+                </li>
+                <li class="nav__item">
+                  <a href="about.html">About</a>
+                </li>
+                <li class="nav__item">
+                  <a href="service.html">Service</a>
+                </li>
+                <li class="nav__item">
+                  <a href="design.html">Design</a>
+                </li>
+                <li class="nav__item">
+                  <a href="contact.html">Contact</a>
+                </li>
+                <li class="nav__item">
+                  <a href="orderform.html">Order form</a>
+                </li>
+                <a class="btn--hamburger" href="contact.html">Contact Form</a>
+              </ul>
+            </nav>
           </div>
         </div>
+        <p class="header__title"><span>S</span>ervice</p>
       </div>
     </header>
+
+    <main class="main">
+      <section class="plan">
+        <div class="plan__title group">
+          <p class="group__category">プラン</p>
+          <p class="group__title">Plan</p>
+        </div>
+        <div class="service__list">
+          <!-- <div class="service__inner"> -->
+          <div class="plan__item card">
+            <div class="card__content">
+              <div class="card__imp">
+                <h3 class="card__number">01</h3>
+                <p class="card__title">タイトル</p>
+              </div>
+              <p class="card__content-title">タイトル</p>
+              <p class="card__content-text">内容内容内容内容内容内容内容内容</p>
+            </div>
+            <div class="card__photo">
+              <img src="./images/photo2.png" alt="" />
+            </div>
+          </div>
+          <div class="plan__item service__item2 card">
+            <div class="card__content card__content2">
+              <div class="card__imp">
+                <h3 class="card__number">02</h3>
+                <p class="card__title">タイトル</p>
+              </div>
+              <p class="card__content-title">タイトル</p>
+              <p class="card__content-text">内容内容内容内容内容内容内容内容</p>
+            </div>
+            <div class="card__photo">
+              <img src="./images/photo2.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="flow">
+        <div class="main__inner">
+          <div class="plan__title group">
+            <p class="group__category">流れ</p>
+            <p class="group__title">Flow</p>
+          </div>
+
+          <div class="flow__list">
+            <div class="flow__item tail">
+              <p class="tail__number">Step ①</p>
+              <p class="tail__icon">
+                <img src="./images/images.png" alt="" />
+              </p>
+              <p class="tail__text">打ち合わせ予約</p>
+            </div>
+            <div class="flow__item tail">
+              <p class="tail__number">Step ②</p>
+              <p class="tail__icon"><img src="./images/images.png" alt="" /></p>
+              <p class="tail__text">初回面談</p>
+            </div>
+            <div class="flow__item tail">
+              <p class="tail__number">Step ③</p>
+              <p class="tail__icon"><img src="./images/images.png" alt="" /></p>
+              <p class="tail__text">プラン</p>
+            </div>
+            <div class="flow__item tail">
+              <p class="tail__number">Step ④</p>
+              <p class="tail__icon"><img src="./images/images.png" alt="" /></p>
+              <p class="tail__text">見積書提出</p>
+            </div>
+            <div class="flow__item tail">
+              <p class="tail__number">Step ⑤</p>
+              <p class="tail__icon"><img src="./images/images.png" alt="" /></p>
+              <p class="tail__text">ご契約</p>
+            </div>
+            <div class="flow__item tail">
+              <p class="tail__number">Step ⑥</p>
+              <p class="tail__icon"><img src="./images/images.png" alt="" /></p>
+              <p class="tail__text">施工管理</p>
+            </div>
+            <div class="flow__item tail">
+              <p class="tail__number">Step ⑦</p>
+              <p class="tail__icon"><img src="./images/images.png" alt="" /></p>
+              <p class="tail__text">引き渡し</p>
+            </div>
+            <div class="flow__item tail">
+              <p class="tail__number">Step ⑧</p>
+              <p class="tail__icon"><img src="./images/images.png" alt="" /></p>
+              <p class="tail__text">アフターフォローメンテナンス</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
   </body>
 </html>

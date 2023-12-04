@@ -8,10 +8,10 @@
       href="https://unpkg.com/modern-css-reset/dist/reset.min.css"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <title>ナナイロGarden-Contact-</title>
+    <title>ナナイロGarden-Service-</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header header__page">
       <div class="header__inner">
         <div class="header__hamburger-flex">
           <div class="header__flex">
@@ -27,34 +27,113 @@
             <div class="header__right">
               <ul class="menu">
                 <li class="menu__list">
-                  <a href="#"><span>Top</span><span>トップ</span></a>
+                  <a href="index.html"><span>Top</span><span>トップ</span></a>
                 </li>
                 <li class="menu__list">
-                  <a href="#"><span>About</span><span>会社について</span></a>
+                  <a href="about.html"
+                    ><span>About</span><span>会社について</span></a
+                  >
                 </li>
                 <li class="menu__list">
-                  <a href="#"><span>Service</span><span>サービス</span></a>
+                  <a href="service.html"
+                    ><span>Service</span><span>サービス</span></a
+                  >
                 </li>
                 <li class="menu__list">
-                  <a href="#"><span>Design</span><span>デザイン</span></a>
+                  <a href="design.html"
+                    ><span>Design</span><span>デザイン</span></a
+                  >
                 </li>
                 <li class="menu__list">
-                  <a href="#"><span>Contact</span><span>お問い合わせ</span></a>
+                  <a href="contact.html"
+                    ><span>Contact</span><span>お問い合わせ</span></a
+                  >
                 </li>
                 <li class="menu__list">
-                  <a href="#"><span>Order</span><span>ご注文</span></a>
+                  <a href="orderform.html"
+                    ><span>Order</span><span>ご注文</span></a
+                  >
                 </li>
               </ul>
               <a class="btn" href="#">Contact Form</a>
             </div>
           </div>
-          <div class="hamburger">
-            <span></span>
-            <!-- <span>menu</span> -->
-            <span></span>
+          <div class="hamburger__top">
+            <div class="hamburger">
+              <span></span>
+              <!-- <span>menu</span> -->
+              <span></span>
+            </div>
+            <nav class="nav">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="index.html">Top</a>
+                </li>
+                <li class="nav__item">
+                  <a href="about.html">About</a>
+                </li>
+                <li class="nav__item">
+                  <a href="service.html">Service</a>
+                </li>
+                <li class="nav__item">
+                  <a href="design.html">Design</a>
+                </li>
+                <li class="nav__item">
+                  <a href="contact.html">Contact</a>
+                </li>
+                <li class="nav__item">
+                  <a href="orderform.html">Order form</a>
+                </li>
+                <a class="btn--hamburger" href="contact.html">Contact Form</a>
+              </ul>
+            </nav>
           </div>
         </div>
+        <p class="header__title"><span>C</span>ontact</p>
       </div>
     </header>
+
+    <main class="main">
+      <section class="contact__border">
+        <div class="main__inner">
+          <div class="contact__title group">
+            <p class="group__category">お問い合わせ</p>
+            <p class="group__title">Contact</p>
+          </div>
+
+          <div class="contact__form">
+            <div class="contact__item zebra">
+              <p class="zebra__content">
+                お問い合わせ内容<span class="zebra__imp">必須</span>
+              </p>
+              <p class="zebra__text">選択してください</p>
+            </div>
+
+            <div class="contact__item zebra">
+              <p class="zebra__content">
+                お問い合わせ内容<span class="zebra__imp">必須</span>
+              </p>
+              <p class="zebra__text">選択してください</p>
+            </div>
+
+            <div class="contact__item zebra">
+              <p class="zebra__content">
+                お問い合わせ内容<span class="zebra__imp">必須</span>
+              </p>
+              <p class="zebra__text">選択してください</p>
+            </div>
+
+            <div class="contact__item zebra">
+              <p class="zebra__content">
+                お問い合わせ内容<span class="zebra__imp">必須</span>
+              </p>
+              <p class="zebra__text">選択してください</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
