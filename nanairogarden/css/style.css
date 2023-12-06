@@ -79,7 +79,7 @@ img {
 .header__title {
   display: block;
   position: absolute;
-  top: 550px;
+  top: 65%;
   right: 10%;
   font-size: 42px;
   font-weight: bold;
@@ -199,7 +199,7 @@ img {
   /*描画位置※位置は適宜調整してください*/
   position: absolute;
   right: 40px;
-  bottom: 430px;
+  bottom: 40%;
   /*全体の高さ*/
   height: 100px;
 }
@@ -331,7 +331,7 @@ img {
 /*about
 ---------------------------------*/
 .about {
-  padding: 700px 0;
+  padding: 700px 0 100px;
 }
 .about__content {
   margin-bottom: 100px;
@@ -379,11 +379,13 @@ img {
 }
 .about__photo {
   position: relative;
+  width: 80%;
 }
 .about__photo1 {
   max-width: 500px;
   position: relative;
   border: 1px solid #c7c58d;
+  width: 100%;
 }
 .about__photo2 {
   position: absolute;
@@ -586,7 +588,7 @@ tr:nth-child(1) {
 }
 
 th {
-  width: 240px;
+  width: 153px;
   padding-left: 40px;
   text-align: left;
   vertical-align: top;
@@ -622,24 +624,44 @@ td {
 
 .tail {
   border: 1px solid #5d3030;
-  padding: 10px 30px;
   position: relative;
+  padding: 10px;
 }
 .tail__number {
   width: 16%;
   text-align: center;
 }
 .tail__icon {
-  width: 16%;
-  border-right: 1px solid #5d3030;
-  border-left: 1px solid #5d3030;
+  min-width: 20%;
   padding: 10px;
   text-align: center;
+  position: relative;
+  padding: 10px;
+}
+.tail__icon:before {
+  content: "";
+  position: absolute;
+  top: 15%;
+  left: -10%;
+  background-color: #5d3030;
+  height: 70%;
+  width: 1px;
+  margin-left: 10px;
+  margin-right: 40px;
+}
+.tail__icon:after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  right: -10%;
+  background-color: #5d3030;
+  height: 70%;
+  width: 1px;
+  margin-right: 10px;
 }
 .tail__text {
   width: 67%;
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -841,7 +863,7 @@ td {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    padding: 100px 0;
+    padding: 100px 0 700px;
   }
   .about__content {
     width: 31.8%;
@@ -903,6 +925,9 @@ td {
     width: 60%;
     margin-top: 0;
   }
+  .tail__icon {
+    min-width: 10%;
+  }
 }
 @media (min-width: 835px) {
   .header {
@@ -917,6 +942,9 @@ td {
     margin: 0;
     background: url(../images/photo2.png) no-repeat center center;
     background-size: cover;
+  }
+  .scrolldown {
+    display: none;
   }
   .scrolldown1 {
     /*描画位置※位置は適宜調整してください*/
@@ -985,6 +1013,9 @@ td {
       opacity: 0;
     }
   }
+  .about {
+    padding: 100px 0;
+  }
 }
 @media (min-width: 600px) {
   table {
@@ -1008,10 +1039,73 @@ td {
   .greet__title p:nth-child(1) {
     margin-left: -200px;
   }
+  th {
+    width: 300px;
+  }
+  .tail__text {
+    font-weight: bold;
+  }
+  .tail__text {
+    font-size: 20px;
+  }
 }
 @media (max-width: 807px) {
   .bord {
     box-shadow: none;
+  }
+}
+@media (max-width: 666px) {
+  .about__photo2 {
+    top: 50%;
+    right: 0;
+    left: 50%;
+    width: 60%;
+  }
+  .about__photo3 {
+    left: 10%;
+    right: 0;
+    width: 60%;
+    top: 120%;
+  }
+}
+/*========= 光りながら出現させるためのCSS ===============*/
+.glowAnime span {
+  opacity: 0;
+}
+
+/*アニメーションで透過を0から1に変化させtext-shadowをつける*/
+.glowAnime.glow span {
+  -webkit-animation: glow_anime_on 1s ease-out forwards;
+          animation: glow_anime_on 1s ease-out forwards;
+}
+
+@-webkit-keyframes glow_anime_on {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff;
+  }
+}
+
+@keyframes glow_anime_on {
+  0% {
+    opacity: 0;
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 10px #fff, 0 0 15px #fff;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff;
   }
 }
 /*# sourceMappingURL=style.css.map */
